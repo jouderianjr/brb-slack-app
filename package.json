@@ -6,11 +6,11 @@
   "scripts": {
     "start": "node app.js",
     "dev": "npx nodemon app.js"
-
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@slack/interactive-messages": "^1.6.0",
     "@slack/bolt": "^2.1.1",
     "@slack/events-api": "^2.3.3",
     "@slack/oauth": "^1.1.0",
@@ -23,7 +23,6 @@
     "keyv": "^4.0.1"
   },
   "devDependencies": {
-    "@slack/interactive-messages": "^1.6.0",
     "nodemon": "^2.0.4"
   }
 }

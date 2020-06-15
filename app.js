@@ -13,7 +13,7 @@ const messageEventHandler = require('./messageEventHandler');
 admin.initializeApp({
   credential: admin.credential.cert({
     client_email: process.env.GOOGLE_CLIENT_EMAIL,
-    private_key: process.env.GOOGLE_PRIVATE_KEY,
+    private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
     project_id: process.env.GOOGLE_PROJECT_ID,
   }),
 });
@@ -44,29 +44,4 @@ appHome.registerInteractions(db, slackInteractions, slackBotToken);
 
 slackEvents.on('message', messageEventHandler(db));
 
-app.listen(process.env.PORT || 3000, () => `Server started`);
-
-//slackEvents.on('message', async event => {
-  //try {
-    //const accessToken = await keyv.get(event.user);
-
-    //console.log(event);
-    //console.log(event.user);
-    //console.log(keyv.get(event.user));
-
-    //console.log(accessToken);
-
-    //const web = new WebClient(accessToken);
-
-    //if (channelId == event.channel) {
-      //if (isBackMessage(event.text)) {
-        //setStatus('', web);
-      //} else if (isValidCommand(event.text)) {
-        //const emoji = getEmoji(event.text);
-        //setStatus(emoji, web);
-      //}
-    //}
-  //} catch (err) {
-    //console.log(`Not Found: ${err}`);
-  //}
-//});
+app.listen(process.env.PORT || 3000, () => console.log(`Server started`));
