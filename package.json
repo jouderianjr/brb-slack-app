@@ -1,0 +1,27 @@
+{
+  "name": "brb-slack-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@slack/bolt": "^2.1.1",
+    "@slack/events-api": "^2.3.3",
+    "@slack/oauth": "^1.1.0",
+    "@slack/web-api": "^5.10.0",
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "firebase-admin": "^8.12.1",
+    "keyv": "^4.0.1"
+  },
+  "devDependencies": {
+    "@slack/interactive-messages": "^1.6.0",
+    "nodemon": "^2.0.4"
+  }
+}
