@@ -6,7 +6,7 @@ module.exports = {
     },
     {
       tag: 'brb',
-      emoji: ':stopwatch:',
+      emoji: ':brb:',
     },
   ],
 };

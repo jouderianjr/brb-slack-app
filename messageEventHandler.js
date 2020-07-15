@@ -16,11 +16,11 @@ const getEmoji = message => {
   return commands.find(command => lowerCaseMessage.includes(command.tag)).emoji;
 };
 
-const setStatus = (emoji, web) =>
+const setStatus = (emoji, text, web) =>
   web.users.profile
     .set({
       profile: {
-        status_text: '',
+        status_text: text,
         status_emoji: emoji,
         status_expiration: 0,
       },
@@ -42,10 +42,10 @@ const messageHandler = db => {
         const web = new WebClient(user && user.accessToken);
 
         if (isBackMessage(event.text)) {
-          setStatus('', web);
+          setStatus('', '', web);
         } else if (isValidCommand(event.text)) {
           const emoji = getEmoji(event.text);
-          setStatus(emoji, web);
+          setStatus(emoji, event.text, web);
         }
       }
     } catch (e) {
