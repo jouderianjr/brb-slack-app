@@ -8,5 +8,13 @@ module.exports = {
       tag: 'brb',
       emoji: ':brb:',
     },
+    {
+      tag: 'do not disturb',
+      emoji: ':no_entry:',
+    },
+    {
+      tag: 'focused',
+      emoji: ':no_entry:',
+    }
   ],
 };
